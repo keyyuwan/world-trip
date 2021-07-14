@@ -1,0 +1,51 @@
+.swiper-container {
+  height: 450px;
+  width: 1240px;
+  margin-bottom: 40px;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide.north-america {
+  background-image: url("/assets/NorthAmerica.jpg");
+  background-position: bottom;
+}
+
+.swiper-slide.south-america {
+  background-image: url("/assets/SouthAmerica.jpg");
+  background-position: center;
+}
+
+.swiper-slide.asia {
+  background-image: url("/assets/Asia.jpg");
+  background-position: top center;
+}
+
+.swiper-slide.africa {
+  background-image: url("/assets/Africa.jpg");
+  background-position: center bottom;
+}
+
+.swiper-slide.europe {
+  background-image: url("/assets/Europe.png");
+}
+
+.swiper-slide.oceania {
+  background-image: url("/assets/Oceania.jpg");
+  background-position: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
