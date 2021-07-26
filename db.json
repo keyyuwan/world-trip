@@ -1,0 +1,58 @@
+{
+  "continents": [
+    {
+      "id": 1,
+      "slug": "america-do-norte",
+      "name": "América do Norte",
+      "shortDescription": "Um mundo de atrações.",
+      "description": "O turismo na América do Norte é como um grande e variado cardápio. Há opções de cidades urbanas e cosmopolitas, desérticas, nevadas, outras para quem gosta de sossego, de baladas, de parques de diversão, de turismo de aventura.",
+      "img": "/assets/NorthAmerica.jpg",
+      "banner": "/assets/NA_Banner.jpg"
+    },
+    {
+      "id": 2,
+      "slug": "america-do-sul",
+      "name": "América do Sul",
+      "shortDescription": "Lugares incríveis.",
+      "description": "O turismo na América do Sul é bem variado. Afinal, o continente de mais de 17,8 milhões de km² tem uma grande variedade de paisagens, climas e estilos em cada um dos países que o formam. Por isso, fazer turismo no continente sul-americano agrada a qualquer tipo de viajante, desde aquele que prefere praias de mar azul cristalino a aqueles que buscam paisagens de deserto ou mesmo esquiar na neve.",
+      "img": "/assets/SouthAmerica.jpg",
+      "banner": "/assets/SA_Banner.jpg"
+    },
+    {
+      "id": 3,
+      "slug": "asia",
+      "name": "Ásia",
+      "shortDescription": "Culturas diversas.",
+      "description": "Fazer turismo na Ásia é fascinante, pois é o destino que muitos viajantes escolhem para vivenciar um verdadeiro choque cultural. As religiões, a gastronomia típica, os costumes e a maneira de viver dos asiáticos, contrastam bastante com o estilo de vida do ocidente são fatores que atraem turistas de todas as partes do planeta, principalmente europeus.",
+      "img": "/assets/Asia.jpg",
+      "banner": "/assets/Asia_Banner.jpg"
+    },
+    {
+      "id": 4,
+      "slug": "africa",
+      "name": "África",
+      "shortDescription": "Natureza exuberante.",
+      "description": "Se o turismo na África para você é somente fazer safári pelas savanas e se os países africanos na sua são todos pobres e sem atrativos, saiba que você tem muito a descobrir sobre a África. Em seus mais de 30 milhões de km², o continente conta com uma grande diversidade de paisagens, etnias, cultura e costumes, além da situação econômica.",
+      "img": "/assets/Africa.jpg",
+      "banner": "/assets/Africa_Banner.jpg"
+    },
+    {
+      "id": 5,
+      "slug": "europa",
+      "name": "Europa",
+      "shortDescription": "O continente mais antigo.",
+      "description": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste.",
+      "img": "/assets/Europe.png",
+      "banner": "/assets/Europe_Banner.png"
+    },
+    {
+      "id": 6,
+      "slug": "oceania",
+      "name": "Oceania",
+      "shortDescription": "O continente mais recente.",
+      "description": "A Oceania é formada por 20 mil ilhas e atóis. No total, a região tem 9 milhões de km² de paisagens paradisíacas, tradições de civilizações aborígenes e cultura europeia, e cidades cheias de atrativos. Veja neste artigo os principais destinos turísticos da Oceania, que inclui países e regiões em um mapa turístico exótico, com algumas nações com economia forte e estável.",
+      "img": "/assets/Oceania.jpg",
+      "banner": "/assets/Oceania_Banner.jpg"
+    }
+  ]
+}

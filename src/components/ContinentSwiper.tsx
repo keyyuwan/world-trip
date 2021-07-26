@@ -1,5 +1,9 @@
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Text, Heading } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import { api } from "../services/api";
 
 // Import Swiper styles
 import "swiper/swiper.min.css";
@@ -16,124 +20,67 @@ import SwiperCore, {
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Mousewheel, Keyboard]);
+interface Continent {
+  id: number;
+  slug: string;
+  name: string;
+  img: string;
+  shortDescription: string;
+  description: string;
+  banner: string;
+}
 
 export function ContinentSwiper() {
+  const [continents, setContinents] = useState<Continent[]>([]);
+
+  useEffect(() => {
+    let montado = true;
+
+    async function getContinents() {
+      try {
+        const res = await api.get("/continents");
+
+        if (montado) {
+          setContinents(res.data);
+        }
+      } catch (e) {
+        console.log("Erro: ", e);
+      }
+    }
+
+    getContinents();
+
+    return () => {
+      montado = false;
+    };
+  }, []);
   return (
     <Swiper cssMode navigation pagination={{ clickable: true }}>
-      <SwiperSlide className="north-america">
-        <Heading
-          fontSize={48}
-          fontWeight={700}
-          lineHeight="72px"
-          color="#F5F8FA"
-        >
-          América do Norte
-        </Heading>
-        <Text
-          mt={16}
-          fontSize={24}
-          fontWeight={700}
-          lineHeight="36px"
-          color="#DADADA"
-        >
-          Um mundo de atrações.
-        </Text>
-      </SwiperSlide>
-      <SwiperSlide className="south-america">
-        <Heading
-          fontSize={48}
-          fontWeight={700}
-          lineHeight="72px"
-          color="#F5F8FA"
-        >
-          América do Sul
-        </Heading>
-        <Text
-          mt={16}
-          fontSize={24}
-          fontWeight={700}
-          lineHeight="36px"
-          color="#DADADA"
-        >
-          Lugares incríveis.
-        </Text>
-      </SwiperSlide>
-      <SwiperSlide className="asia">
-        <Heading
-          fontSize={48}
-          fontWeight={700}
-          lineHeight="72px"
-          color="#F5F8FA"
-        >
-          Ásia
-        </Heading>
-        <Text
-          mt={16}
-          fontSize={24}
-          fontWeight={700}
-          lineHeight="36px"
-          color="#DADADA"
-        >
-          Cuturas diversas.
-        </Text>
-      </SwiperSlide>
-      <SwiperSlide className="africa">
-        <Heading
-          fontSize={48}
-          fontWeight={700}
-          lineHeight="72px"
-          color="#F5F8FA"
-        >
-          África
-        </Heading>
-        <Text
-          mt={16}
-          fontSize={24}
-          fontWeight={700}
-          lineHeight="36px"
-          color="#DADADA"
-        >
-          Natureza exuberante.
-        </Text>
-      </SwiperSlide>
-      <SwiperSlide className="europe">
-        <Heading
-          fontSize={48}
-          fontWeight={700}
-          lineHeight="72px"
-          color="#F5F8FA"
-        >
-          Europa
-        </Heading>
-        <Text
-          mt={16}
-          fontSize={24}
-          fontWeight={700}
-          lineHeight="36px"
-          color="#DADADA"
-        >
-          O continente mais antigo.
-        </Text>
-      </SwiperSlide>
-      <SwiperSlide className="oceania">
-        <Heading
-          fontSize={48}
-          fontWeight={700}
-          lineHeight="72px"
-          color="#F5F8FA"
-        >
-          Oceania
-        </Heading>
-        <Text
-          mt={16}
-          fontSize={24}
-          fontWeight={700}
-          lineHeight="36px"
-          color="#DADADA"
-        >
-          O continente mais recente.
-        </Text>
-      </SwiperSlide>
+      {continents.map((continent) => (
+        <SwiperSlide className={continent.slug} key={continent.name}>
+          <Link href={`/continentes/${continent.id}`}>
+            <Heading
+              fontSize={48}
+              fontWeight={700}
+              lineHeight="72px"
+              color="#F5F8FA"
+              transition="200ms"
+              _hover={{ cursor: "pointer", filter: "brightness(0.9)" }}
+            >
+              {continent.name}
+            </Heading>
+          </Link>
+          <Text
+            mt={16}
+            fontSize={24}
+            fontWeight={700}
+            lineHeight="36px"
+            color="#DADADA"
+          >
+            {continent.shortDescription}
+          </Text>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

@@ -14,12 +14,12 @@
   background-size: cover;
 }
 
-.swiper-slide.north-america {
+.swiper-slide.america-do-norte {
   background-image: url("/assets/NorthAmerica.jpg");
   background-position: bottom;
 }
 
-.swiper-slide.south-america {
+.swiper-slide.america-do-sul {
   background-image: url("/assets/SouthAmerica.jpg");
   background-position: center;
 }
@@ -34,7 +34,7 @@
   background-position: center bottom;
 }
 
-.swiper-slide.europe {
+.swiper-slide.europa {
   background-image: url("/assets/Europe.png");
 }
 
