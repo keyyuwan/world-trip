@@ -54,5 +54,37 @@
       "img": "/assets/Oceania.jpg",
       "banner": "/assets/Oceania_Banner.jpg"
     }
+  ],
+  "cities": [
+    {
+      "name": "Londres",
+      "country": "Reino Unido",
+      "img": "/assets/london.png",
+      "avatar": "/assets/UK_flag.png"
+    },
+    {
+      "name": "Paris",
+      "country": "França",
+      "img": "/assets/paris.png",
+      "avatar": "/assets/FranceFlag.png"
+    },
+    {
+      "name": "Roma",
+      "country": "Itália",
+      "img": "/assets/rome.png",
+      "avatar": "/assets/ItalyFlag.png"
+    },
+    {
+      "name": "Praga",
+      "country": "República Tcheca",
+      "img": "/assets/prague.png",
+      "avatar": "/assets/RT_flag.png"
+    },
+    {
+      "name": "Amsterdã",
+      "country": "Holanda",
+      "img": "/assets/amsterdan.png",
+      "avatar": "/assets/netherlands_flag.png"
+    }
   ]
 }

@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { Image, Box, Text, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+import {
+  Image,
+  Box,
+  Text,
+  Flex,
+  Heading,
+  SimpleGrid,
+  Tooltip,
+} from "@chakra-ui/react";
+import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { Header } from "../../components/Header";
+import { City100 } from "../../components/City100";
 import { api } from "../../services/api";
 
 interface Continent {
@@ -13,6 +23,13 @@ interface Continent {
   shortDescription: string;
   description: string;
   banner: string;
+}
+
+interface City {
+  name: string;
+  country: string;
+  img: string;
+  avatar: string;
 }
 
 export default function Continent() {
@@ -41,6 +58,29 @@ export default function Continent() {
       montado = false;
     };
   }, [id]);
+
+  const [cities100, setCities100] = useState<City[]>([]);
+
+  useEffect(() => {
+    let montado = true;
+
+    async function getCities100() {
+      try {
+        const res = await api.get("/cities");
+        if (montado) {
+          setCities100(res.data);
+        }
+      } catch (e) {
+        console.log("Erro: ", e);
+      }
+    }
+
+    getCities100();
+
+    return () => {
+      montado = false;
+    };
+  }, []);
   return (
     <>
       <Head>
@@ -102,9 +142,20 @@ export default function Continent() {
                 <Text color="#FFBA08" fontSize={48} fontWeight={600}>
                   27
                 </Text>
-                <Text fontWeight={600} color="#47585B">
-                  cidades + 100
-                </Text>
+                <Flex align="center">
+                  <Text fontWeight={600} color="#47585B">
+                    cidades + 100
+                  </Text>
+                  <Tooltip
+                    label="Cidades deste continente que estão entre as 100 mais visitadas do mundo."
+                    bgColor="#47585B"
+                    color="white"
+                    p={16}
+                    borderRadius={4}
+                  >
+                    <InfoOutlineIcon ml={8} />
+                  </Tooltip>
+                </Flex>
               </Flex>
             </Flex>
           </Flex>
@@ -114,13 +165,9 @@ export default function Continent() {
               Cidades + 100
             </Heading>
             <SimpleGrid columns={4} mt={40} spacing={45}>
-              <Box w={250} h={250} bgColor="red"></Box>
-              <Box w={250} h={250} bgColor="red"></Box>
-              <Box w={250} h={250} bgColor="red"></Box>
-              <Box w={250} h={250} bgColor="red"></Box>
-              <Box w={250} h={250} bgColor="red"></Box>
-              <Box w={250} h={250} bgColor="red"></Box>
-              <Box w={250} h={250} bgColor="red"></Box>
+              {cities100.map((city) => (
+                <City100 city={city} key={city.name} />
+              ))}
             </SimpleGrid>
           </Box>
         </Box>
