@@ -20,11 +20,11 @@ export default function Home() {
 
         <Divider />
 
-        <Box textAlign="center" my="52px">
+        <Box textAlign="center" my={{ base: "22px", lg: "52px" }}>
           <Text
             fontWeight={500}
-            fontSize="36px"
-            lineHeight="54px"
+            fontSize={{ base: "20px", lg: "36px" }}
+            lineHeight={{ base: "30px", lg: "54px" }}
             color="#47585B"
           >
             Vamos nessa? <br />

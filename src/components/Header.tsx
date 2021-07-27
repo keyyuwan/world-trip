@@ -9,7 +9,7 @@ export function Header() {
     <Flex
       as="header"
       w="100%"
-      h={[50, 100]}
+      h={{ base: "50px", lg: "100px" }}
       align="center"
       justify="center"
       position="relative"
@@ -26,7 +26,11 @@ export function Header() {
           />
         </Link>
       )}
-      <Image src="/assets/logo.svg" alt="worldtrip" />
+      <Image
+        src="/assets/logo.svg"
+        alt="worldtrip"
+        h={{ base: "20px", lg: "46px" }}
+      />
     </Flex>
   );
 }
