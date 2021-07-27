@@ -21,7 +21,7 @@ export function City100({ city }: City100Props) {
         align="center"
         justify="space-between"
         borderRadius="0 0 4px 4px"
-        p={16}
+        p="16px"
       >
         <Box>
           <Heading
@@ -37,12 +37,12 @@ export function City100({ city }: City100Props) {
             fontSize={16}
             fontFamily="Barlow"
             color="#47585B"
-            mt={12}
+            mt="12px"
           >
             {city.country}
           </Text>
         </Box>
-        <Avatar src={city.avatar} alt={city.name} />
+        <Avatar src={city.avatar} alt={city.name} h={30} w={30} />
       </Flex>
     </Flex>
   );

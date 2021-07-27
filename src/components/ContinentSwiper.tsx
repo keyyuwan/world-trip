@@ -60,7 +60,7 @@ export function ContinentSwiper() {
         <SwiperSlide className={continent.slug} key={continent.name}>
           <Link href={`/continentes/${continent.id}`}>
             <Heading
-              fontSize={48}
+              fontSize="48px"
               fontWeight={700}
               lineHeight="72px"
               color="#F5F8FA"
@@ -71,8 +71,8 @@ export function ContinentSwiper() {
             </Heading>
           </Link>
           <Text
-            mt={16}
-            fontSize={24}
+            mt="16px"
+            fontSize="24px"
             fontWeight={700}
             lineHeight="36px"
             color="#DADADA"

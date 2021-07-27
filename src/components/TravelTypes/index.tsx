@@ -3,8 +3,8 @@ import { TravelType } from "./TravelType";
 
 export function TravelTypes() {
   return (
-    <Flex justify="center" mt={80}>
-      <Flex align="center" justify="space-between" w={1120}>
+    <Flex justify="center" mt="80px">
+      <Flex align="center" justify="space-between" w="1220px">
         <TravelType title="vida noturna" image="/assets/cocktail.svg" />
         <TravelType title="praia" image="/assets/surf.svg" />
         <TravelType title="moderno" image="/assets/building.svg" />

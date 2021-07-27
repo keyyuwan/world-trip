@@ -20,10 +20,10 @@ export default function Home() {
 
         <Divider />
 
-        <Box textAlign="center" my={52}>
+        <Box textAlign="center" my="52px">
           <Text
             fontWeight={500}
-            fontSize={36}
+            fontSize="36px"
             lineHeight="54px"
             color="#47585B"
           >

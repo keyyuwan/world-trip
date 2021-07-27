@@ -92,7 +92,7 @@ export default function Continent() {
           <Image
             src={continent.banner}
             alt={continent.name}
-            h={500}
+            h="500px"
             w="100%"
             position="relative"
           />
@@ -100,7 +100,7 @@ export default function Continent() {
           {id !== "5" && (
             <Text
               fontWeight={600}
-              fontSize={48}
+              fontSize="48px"
               color="#F5F8FA"
               position="absolute"
               left={140}
@@ -111,18 +111,18 @@ export default function Continent() {
           )}
         </Box>
         <Box maxWidth={1120} mx="auto">
-          <Flex mt={80} align="center">
+          <Flex mt="80px" align="center">
             <Text
               fontWeight={400}
-              fontSize={24}
+              fontSize="24px"
               lineHeight="36px"
               color="#47585B"
               maxWidth={600}
             >
               {continent.description}
             </Text>
-            <Flex ml={70}>
-              <Flex direction="column" align="center" ml={42}>
+            <Flex ml="70px">
+              <Flex direction="column" align="center" ml="42px">
                 <Text color="#FFBA08" fontSize={48} fontWeight={600}>
                   50
                 </Text>
@@ -130,7 +130,7 @@ export default function Continent() {
                   países
                 </Text>
               </Flex>
-              <Flex direction="column" align="center" ml={42}>
+              <Flex direction="column" align="center" ml="42px">
                 <Text color="#FFBA08" fontSize={48} fontWeight={600}>
                   60
                 </Text>
@@ -138,7 +138,7 @@ export default function Continent() {
                   línguas
                 </Text>
               </Flex>
-              <Flex direction="column" align="center" ml={42}>
+              <Flex direction="column" align="center" ml="42px">
                 <Text color="#FFBA08" fontSize={48} fontWeight={600}>
                   27
                 </Text>
@@ -150,21 +150,21 @@ export default function Continent() {
                     label="Cidades deste continente que estão entre as 100 mais visitadas do mundo."
                     bgColor="#47585B"
                     color="white"
-                    p={16}
+                    p="16px"
                     borderRadius={4}
                   >
-                    <InfoOutlineIcon ml={8} />
+                    <InfoOutlineIcon ml="8px" />
                   </Tooltip>
                 </Flex>
               </Flex>
             </Flex>
           </Flex>
 
-          <Box mt={80} mb={35}>
+          <Box mt="80px" mb="35px">
             <Heading fontWeight={500} fontSize={36} color="#47585B">
               Cidades + 100
             </Heading>
-            <SimpleGrid columns={4} mt={40} spacing={45}>
+            <SimpleGrid columns={4} mt="40px" spacing={45}>
               {cities100.map((city) => (
                 <City100 city={city} key={city.name} />
               ))}

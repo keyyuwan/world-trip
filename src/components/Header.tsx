@@ -8,7 +8,8 @@ export function Header() {
   return (
     <Flex
       as="header"
-      h={100}
+      w="100%"
+      h={[50, 100]}
       align="center"
       justify="center"
       position="relative"
@@ -19,6 +20,7 @@ export function Header() {
             src="/assets/back.svg"
             alt="Voltar"
             position="absolute"
+            h={[20, 46]}
             left={140}
             _hover={{ cursor: "pointer" }}
           />
