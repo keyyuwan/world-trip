@@ -1,16 +1,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import {
-  Image,
-  Box,
-  Text,
-  Flex,
-  Heading,
-  SimpleGrid,
-  Tooltip,
-} from "@chakra-ui/react";
-import { InfoOutlineIcon } from "@chakra-ui/icons";
+import { Image, Box, Text, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+
+import { Statistics } from "../../components/Statistics";
 import { Header } from "../../components/Header";
 import { City100 } from "../../components/City100";
 import { api } from "../../services/api";
@@ -126,53 +119,9 @@ export default function Continent() {
               {continent.description}
             </Text>
             <Flex ml={{ lg: "70px" }} mt={{ base: "16px" }}>
-              <Flex direction="column" align={{ lg: "center" }} ml="42px">
-                <Text
-                  color="#FFBA08"
-                  fontSize={{ base: "24px", lg: "48px" }}
-                  fontWeight={600}
-                >
-                  50
-                </Text>
-                <Text fontWeight={600} color="#47585B">
-                  países
-                </Text>
-              </Flex>
-              <Flex direction="column" align={{ lg: "center" }} ml="42px">
-                <Text
-                  color="#FFBA08"
-                  fontSize={{ base: "24px", lg: "48px" }}
-                  fontWeight={600}
-                >
-                  60
-                </Text>
-                <Text fontWeight={600} color="#47585B">
-                  línguas
-                </Text>
-              </Flex>
-              <Flex direction="column" align={{ lg: "center" }} ml="42px">
-                <Text
-                  color="#FFBA08"
-                  fontSize={{ base: "24px", lg: "48px" }}
-                  fontWeight={600}
-                >
-                  27
-                </Text>
-                <Flex align="center">
-                  <Text fontWeight={600} color="#47585B">
-                    cidades + 100
-                  </Text>
-                  <Tooltip
-                    label="Cidades deste continente que estão entre as 100 mais visitadas do mundo."
-                    bgColor="#47585B"
-                    color="white"
-                    p="16px"
-                    borderRadius={4}
-                  >
-                    <InfoOutlineIcon ml="8px" />
-                  </Tooltip>
-                </Flex>
-              </Flex>
+              <Statistics number="50" text="paises" />
+              <Statistics number="60" text="línguas" />
+              <Statistics number="27" text="cidades + 100" isCity100 />
             </Flex>
           </Flex>
 
