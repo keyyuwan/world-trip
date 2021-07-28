@@ -20,8 +20,8 @@ export function Header() {
             src="/assets/back.svg"
             alt="Voltar"
             position="absolute"
-            h={[20, 46]}
-            left={140}
+            h={{ base: "16px", lg: "46px" }}
+            left={{ base: "16px", lg: "140px" }}
             _hover={{ cursor: "pointer" }}
           />
         </Link>

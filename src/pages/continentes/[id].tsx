@@ -92,7 +92,7 @@ export default function Continent() {
           <Image
             src={continent.banner}
             alt={continent.name}
-            h="500px"
+            h={{ base: "150px", lg: "500px" }}
             w="100%"
             position="relative"
           />
@@ -100,46 +100,62 @@ export default function Continent() {
           {id !== "5" && (
             <Text
               fontWeight={600}
-              fontSize="48px"
+              fontSize={{ base: "28px", lg: "48px" }}
               color="#F5F8FA"
               position="absolute"
-              left={140}
-              top={469}
+              left={{ base: "136px", lg: "140px" }}
+              top={{ base: "106px", lg: "469px" }}
             >
               {continent.name}
             </Text>
           )}
         </Box>
-        <Box maxWidth={1120} mx="auto">
-          <Flex mt="80px" align="center">
+        <Box maxWidth={{ base: "350px", lg: "1120px" }} mx="auto">
+          <Flex
+            mt={{ base: "24px", lg: "80px" }}
+            align="center"
+            direction={{ base: "column", lg: "row" }}
+          >
             <Text
               fontWeight={400}
-              fontSize="24px"
-              lineHeight="36px"
+              fontSize={{ base: "14px", lg: "24px" }}
+              lineHeight={{ base: "21px", lg: "36px" }}
               color="#47585B"
               maxWidth={600}
             >
               {continent.description}
             </Text>
-            <Flex ml="70px">
-              <Flex direction="column" align="center" ml="42px">
-                <Text color="#FFBA08" fontSize={48} fontWeight={600}>
+            <Flex ml={{ lg: "70px" }} mt={{ base: "16px" }}>
+              <Flex direction="column" align={{ lg: "center" }} ml="42px">
+                <Text
+                  color="#FFBA08"
+                  fontSize={{ base: "24px", lg: "48px" }}
+                  fontWeight={600}
+                >
                   50
                 </Text>
                 <Text fontWeight={600} color="#47585B">
                   países
                 </Text>
               </Flex>
-              <Flex direction="column" align="center" ml="42px">
-                <Text color="#FFBA08" fontSize={48} fontWeight={600}>
+              <Flex direction="column" align={{ lg: "center" }} ml="42px">
+                <Text
+                  color="#FFBA08"
+                  fontSize={{ base: "24px", lg: "48px" }}
+                  fontWeight={600}
+                >
                   60
                 </Text>
                 <Text fontWeight={600} color="#47585B">
                   línguas
                 </Text>
               </Flex>
-              <Flex direction="column" align="center" ml="42px">
-                <Text color="#FFBA08" fontSize={48} fontWeight={600}>
+              <Flex direction="column" align={{ lg: "center" }} ml="42px">
+                <Text
+                  color="#FFBA08"
+                  fontSize={{ base: "24px", lg: "48px" }}
+                  fontWeight={600}
+                >
                   27
                 </Text>
                 <Flex align="center">
@@ -160,11 +176,23 @@ export default function Continent() {
             </Flex>
           </Flex>
 
-          <Box mt="80px" mb="35px">
-            <Heading fontWeight={500} fontSize={36} color="#47585B">
+          <Box
+            mt={{ base: "32px", lg: "80px" }}
+            mb={{ base: "16px", lg: "35px" }}
+          >
+            <Heading
+              fontWeight={500}
+              fontSize={{ base: "24px", lg: "36px" }}
+              color="#47585B"
+            >
               Cidades + 100
             </Heading>
-            <SimpleGrid columns={4} mt="40px" spacing={45}>
+            <SimpleGrid
+              columns={{ base: 1, lg: 4 }}
+              mt={{ base: "20px", lg: "40px" }}
+              spacing={{ base: "20px", lg: "45px" }}
+              mx={{ base: "60px", lg: "0px" }}
+            >
               {cities100.map((city) => (
                 <City100 city={city} key={city.name} />
               ))}
